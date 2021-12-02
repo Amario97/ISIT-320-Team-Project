@@ -39,7 +39,7 @@ export default function Home() {
         <a className = 'nav-link'>Comments board</a>
       </Link>
       <Link href='/developerCouponList'>
-        <a className = 'nav-link'>Coupon List</a>
+        <a className = 'nav-link'>Make Order</a>
       </Link>
 
     </div>
