@@ -15,3 +15,14 @@ model UserComment {
   Username String @default("DeveloperCommenter")
   Comments String
 }
+
+model Coupons {
+  id Int @default(autoincrement()) @id
+  CouponCode String
+  DiscountFactor Decimal @default(0.75)
+}
+
+model DeveloperCoupons {
+  id Int @default(autoincrement()) @id
+  CouponCode String @unique
+}

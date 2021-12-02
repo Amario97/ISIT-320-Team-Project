@@ -27,21 +27,21 @@ export default function AddComment() {
       </Link>
         <Formik
             initialValues={{
-            Comments: '',
+            CouponCode: '',
             }}
 
             onSubmit = {async (values) => {
-                await fetch('http://localhost:3000/api/usercomments', {
+                await fetch('http://localhost:3000/api/coupons', {
                     method: 'POST',
                     body: JSON.stringify({...values }),
                 });
-                router.push('/commentSubmitted');
+                router.push('/couponAdded');
             }}
         >
             <Form>
                 <label>
-                Comments
-                <Field name="Comments" type="text"></Field>
+                Add Coupon to account (dev)
+                <Field name="CouponCode" type="text"></Field>
                 </label>
                 <button type="submit">Submit</button>
             </Form>   
