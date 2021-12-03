@@ -71,7 +71,22 @@ export default function DeveloperCouponList( {coupons} ) {
         <h1>
             Coupon Experiment
         </h1>
-
+        <Link href='/addComment'>
+        <a className = 'nav-link'>Add comment</a>
+      </Link>
+      <Link href='/addCoupon'>
+        <a className = 'nav-link'>Add coupon to account</a>
+      </Link>
+      <Link href='/'>
+        <a className = 'nav-link'>Home</a>
+      </Link>
+      <Link href='/commentBoard'>
+        <a className = 'nav-link'>Comments board</a>
+      </Link>
+      <Link href='/developerCouponList'>
+        <a className = 'nav-link'>Make Order</a>
+      </Link>
+      <br />
         <label>Choose a Restaurant:</label>
         <select>
             <option>Place 1</option>
