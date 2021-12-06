@@ -1,24 +1,47 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import { useState } from 'react';
 
 export default function Home() {
+  const [data, setData]=useState(null);
+  const [print, setPrint]=useState(false);
+
+  function getData(val) {
+    setData(val.target.value)
+    setPrint(false)
+  }
+  
   return (
     <>
       <Head>
         <title>Meal Mediator | Home</title>
         <meta name="keywords" content="mediator"/>
       </Head>
-      
-      <div>
-        <h1 className={styles.title}>Login</h1>
-        <p align="center"><input type="text" placeholder="UserName"></input></p>
-        <p align="center"><input type="text" placeholder="Password"></input></p>
-        <p align="center"><button align="right">Sign In</button></p>
-        <p align="center">New User? Create new account</p>
-        
-        
-      </div>
+
+      {
+        print?
+        <h1>{data}</h1>
+        :null
+      }
+
+      <input type="text" onChange={getData} />
+      <button onClick = {() => setPrint(true) }>Print Stuff</button>
+      <Link href='/addComment'>
+        <a className = 'nav-link'>Add comment</a>
+      </Link>
+      <Link href='/addCoupon'>
+        <a className = 'nav-link'>Add coupon to account</a>
+      </Link>
+      <Link href='/'>
+        <a className = 'nav-link'>Home</a>
+      </Link>
+      <Link href='/commentBoard'>
+        <a className = 'nav-link'>Comments board</a>
+      </Link>
+      <Link href='/developerCouponList'>
+        <a className = 'nav-link'>Make Order</a>
+      </Link>
+
     </>
   )
 }
