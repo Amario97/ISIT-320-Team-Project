@@ -12,7 +12,18 @@ const Navbar = () => {
       <Link href="/search/"><a>Search</a></Link>
       <Link href="/cart/"><a>Cart</a></Link>
 
-     
+      <Link href='/addComment'>
+        <a className = 'nav-link'>Add comment</a>
+      </Link>
+      <Link href='/addCoupon'>
+        <a className = 'nav-link'>Add coupon to account</a>
+      </Link>
+      <Link href='/commentBoard'>
+        <a className = 'nav-link'>Comments board</a>
+      </Link>
+      <Link href='/developerCouponList'>
+        <a className = 'nav-link'>Make Order</a>
+      </Link>
     </nav>
   );
 }

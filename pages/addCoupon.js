@@ -10,21 +10,12 @@ export default function AddComment() {
   return (
     <div className="container">
       <Head>
-        <title>Add comment</title>
+        <title>Add Coupon</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <h1>
-            Add Comments
+            Add Coupon
         </h1>
-        <Link href='/addComment'>
-        <a className = 'nav-link'>Add comment</a>
-      </Link>
-      <Link href='/addCoupon'>
-        <a className = 'nav-link'>Add coupon to account</a>
-      </Link>
-      <Link href='/'>
-        <a className = 'nav-link'>Home</a>
-      </Link>
         <Formik
             initialValues={{
             CouponCode: '',
@@ -50,15 +41,3 @@ export default function AddComment() {
     </div>
   )
 }
-
-
-// export async function getServerSideProps() {
-
-//     const prisma = new PrismaClient();
-//     const usercomments = await prisma.userComment.findMany();
-
-    
-
-//     // Pass data to the page via props
-//     return { props: { usercomments } }
-// }

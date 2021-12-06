@@ -16,15 +16,6 @@ export default function AddComment() {
         <h1>
             Add Comments
         </h1>
-        <Link href='/addComment'>
-        <a className = 'nav-link'>Add comment</a>
-      </Link>
-      <Link href='/addCoupon'>
-        <a className = 'nav-link'>Add coupon to account</a>
-      </Link>
-      <Link href='/'>
-        <a className = 'nav-link'>Home</a>
-      </Link>
         <Formik
             initialValues={{
             Comments: '',

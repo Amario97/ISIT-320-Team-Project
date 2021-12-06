@@ -18,29 +18,7 @@ export default function Home() {
         <meta name="keywords" content="mediator"/>
       </Head>
 
-      {
-        print?
-        <h1>{data}</h1>
-        :null
-      }
-
-      <input type="text" onChange={getData} />
-      <button onClick = {() => setPrint(true) }>Print Stuff</button>
-      <Link href='/addComment'>
-        <a className = 'nav-link'>Add comment</a>
-      </Link>
-      <Link href='/addCoupon'>
-        <a className = 'nav-link'>Add coupon to account</a>
-      </Link>
-      <Link href='/'>
-        <a className = 'nav-link'>Home</a>
-      </Link>
-      <Link href='/commentBoard'>
-        <a className = 'nav-link'>Comments board</a>
-      </Link>
-      <Link href='/developerCouponList'>
-        <a className = 'nav-link'>Make Order</a>
-      </Link>
+      <div>Add some homepage stuff here</div>
 
     </>
   )
