@@ -13,7 +13,7 @@ export default function CommentBoard( {usercomments, deletecomments} ) {
         <h1>
             Comments
         </h1>
-        <div className='col-sm-3'>
+        <div>
             {usercomments.map((usercomment) => (
               <div key={usercomment.id}>
                   <h4>{usercomment.Username}: {usercomment.Comments} </h4>

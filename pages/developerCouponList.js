@@ -92,12 +92,14 @@ export default function DeveloperCouponList( {coupons} ) {
         <input type="number" id="cucumberCount"  onChange={getCucumber} min="0"/>
         <br />
         <button onClick = {() => { calculateSubtotal(carrot, banana, cucumber)}}>Calculate Subtotal</button>
+        <br />
+        <br />
 
         {
             print?
             <h1>Coupon Activated</h1>
             :
-            <div className='col-sm-3'>
+            <div>
 
                 <label htmlFor="couponBox">Coupon</label>
                 <input type="text" id="couponBox" onChange={getData} />
