@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, {useState} from "react"
+import React, {useRef, useState} from "react"
 
 var totalInput = "NY";
 console.log("reloaded page")
@@ -24,8 +24,10 @@ export async function fetcher(city) {
 }
 
 const Search = () => {
-
-  //search bar input
+  var [divStyle, setDivStyle] = useState(false)
+  
+  var myGrid = <p>My placeholder hahahahahaha</p>
+    //search bar input
   var [input, setData] = useState("null")
   //api data
   var [apiName, setName] = useState()
@@ -88,6 +90,7 @@ const Search = () => {
       setImage6(data.businesses[5].image_url)
       setRating6(data.businesses[5].rating)
       setUrl6(data.businesses[5].url)
+      setDivStyle(true)
     })
   }
 
@@ -101,13 +104,12 @@ const Search = () => {
       </Head>
 
       <form align="center" onSubmit={submitHandler}>
-      <input type="text" placeholder="Type here" className="searchText" onChange={inputChange}/>
+      <input type="text" placeholder="Type city" className="searchText" onChange={inputChange}/>
       <button><i className="fa fa-search"></i></button>
       </form>
-
       <div>
         <h2 align="center">Results</h2>
-        <div align="center" className="grid">
+        <div style={{visibility: divStyle ? 'visible' : 'hidden'}} align="center" className="grid">
               <a href={url} className="card">
                 <h3>{apiName}</h3>
                 <img src={imgUri} alt="Loading..." width="200" height="200"/>
@@ -149,9 +151,8 @@ const Search = () => {
                 <img src={imgUri6} alt="Loading..." width="200" height="200"/>
                 <p>Rating: {rating6}</p>
               </a>
+              <p align="center">Enjoy!</p>
             </div>
-        
-        <p align="center">Enjoy!</p>
       </div>
     </>
   );
