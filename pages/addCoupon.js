@@ -22,7 +22,7 @@ export default function AddComment() {
             }}
 
             onSubmit = {async (values) => {
-                await fetch('http://localhost:3000/api/coupons', {
+                await fetch('http://localhost:3000/api/developercoupons', {
                     method: 'POST',
                     body: JSON.stringify({...values }),
                 });

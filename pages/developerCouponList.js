@@ -18,7 +18,7 @@ export default function DeveloperCouponList( {coupons} ) {
     const [cucumber, setCucumber]=useState(0);
     const [couponActivated, setCouponActivated]=useState(false)
 
-    //let couponActivated = false;
+    let couponActivatedTest = false;
     
 
     function getData(val) {
@@ -45,6 +45,7 @@ export default function DeveloperCouponList( {coupons} ) {
             console.log("Coupon Found")
             setPrint(true)
             setCouponActivated(true)
+            couponActivatedTest = true;
             // couponActivated = true;
             setPrice(price * 0.75)
         } else {
@@ -54,7 +55,7 @@ export default function DeveloperCouponList( {coupons} ) {
 
     function calculateSubtotal(carrot, banana, cucumber) {
         let newPrice = carrot + banana + cucumber
-        if (couponActivated) {
+        if (print) {
             newPrice = newPrice * 0.75
         }
         console.log(newPrice)
@@ -71,21 +72,7 @@ export default function DeveloperCouponList( {coupons} ) {
         <h1>
             Coupon Experiment
         </h1>
-        <Link href='/addComment'>
-        <a className = 'nav-link'>Add comment</a>
-      </Link>
-      <Link href='/addCoupon'>
-        <a className = 'nav-link'>Add coupon to account</a>
-      </Link>
-      <Link href='/'>
-        <a className = 'nav-link'>Home</a>
-      </Link>
-      <Link href='/commentBoard'>
-        <a className = 'nav-link'>Comments board</a>
-      </Link>
-      <Link href='/developerCouponList'>
-        <a className = 'nav-link'>Make Order</a>
-      </Link>
+
       <br />
         <label>Choose a Restaurant:</label>
         <select>
@@ -104,7 +91,7 @@ export default function DeveloperCouponList( {coupons} ) {
         <label htmlFor="cucumberCount">Cucumber</label>
         <input type="number" id="cucumberCount"  onChange={getCucumber} min="0"/>
         <br />
-        <button onClick = {() => {calculateSubtotal(carrot, banana, cucumber)}}>Calculate Subtotal</button>
+        <button onClick = {() => { calculateSubtotal(carrot, banana, cucumber)}}>Calculate Subtotal</button>
 
         {
             print?
@@ -114,7 +101,7 @@ export default function DeveloperCouponList( {coupons} ) {
 
                 <label htmlFor="couponBox">Coupon</label>
                 <input type="text" id="couponBox" onChange={getData} />
-                <button onClick = {() => {setPrint(true); checkCoupon(data); console.log(couponActivated)} }>Add Coupon</button>
+                <button onClick = {() => {checkCoupon(data);} }>Add Coupon</button>
 
                 <br />
                 <br />
