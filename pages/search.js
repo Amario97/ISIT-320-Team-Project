@@ -103,8 +103,9 @@ const Search = () => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </Head>
       <main>
-      <form align="center" onSubmit={submitHandler}>
-      <input type="text" placeholder="Type city" className="searchText" onChange={inputChange}/>
+      <h1>Search</h1>
+      <form align="center" onSubmit={submitHandler} className="searchForm">
+      <input type="text" placeholder="🏙 Type city" className="searchText" onChange={inputChange}/>
       <button className="searchButton"><i className="fa fa-search"></i></button>
       </form>
       <div>
@@ -162,16 +163,37 @@ const Search = () => {
               text-decoration: none;
             }
 
+            h1 {
+              margin-bottom: 40px;
+            }
+
+            h2 {
+              margin-top: 20px;
+            }
+
             .searchText {
+              width: 400px;
               border-radius: 40px;
             }
 
+            .searchForm {
+              position: relative;
+            }
+
+
             .searchButton {
-              border-radius: 40px;
+              background-color: #7299fc;
+              border-color: #7299fc;
+              color: white;
+              border-radius: 55px;
+              width: 54px;
+              position: absolute;
+              top: 0%;
+              right: 0%;
             }
 
             main {
-              padding: 5rem 0;
+              padding: 0;
               flex: 1;
               display: flex;
               flex-direction: column;
@@ -229,9 +251,6 @@ const Search = () => {
               clear: left;
             }
     
-            .logo {
-              height: 1em;
-            }
     
             @media (max-width: 600px) {
               .gridMediator {

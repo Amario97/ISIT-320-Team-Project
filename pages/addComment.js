@@ -41,15 +41,3 @@ export default function AddComment() {
     </div>
   )
 }
-
-
-// export async function getServerSideProps() {
-
-//     const prisma = new PrismaClient();
-//     const usercomments = await prisma.userComment.findMany();
-
-    
-
-//     // Pass data to the page via props
-//     return { props: { usercomments } }
-// }

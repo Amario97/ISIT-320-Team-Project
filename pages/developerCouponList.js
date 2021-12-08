@@ -64,16 +64,16 @@ export default function DeveloperCouponList( {coupons} ) {
 
     return (
     <div className="container">
-      <Head>
+        <Head>
         <title>Comment Board</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+        </Head>
 
         <h1>
             Coupon Experiment
         </h1>
 
-      <br />
+        <br />
         <label>Choose a Restaurant:</label>
         <select>
             <option>Place 1</option>

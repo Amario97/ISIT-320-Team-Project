@@ -7,10 +7,11 @@ const Browse = () => {
         <title>Meal Mediator | Browse</title>
         <meta name="keywords" content="mediator"/>
       </Head>
+      
       <div>
         <h1 >Top Catagories</h1>
-        
       </div>
+
       <div className="grid">
           <a href="" className="card">
             <h3>Fast Food</h3>

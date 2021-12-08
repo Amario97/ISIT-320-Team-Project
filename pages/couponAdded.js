@@ -5,7 +5,7 @@ export default function CommentSubmitted() {
   return (
     <div className="container">
       <Head>
-        <title>Comment Submitted</title>
+        <title>Coupon Added</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
         <h1>
