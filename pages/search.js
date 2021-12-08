@@ -26,31 +26,31 @@ export async function fetcher(city) {
 const Search = () => {
   var [divStyle, setDivStyle] = useState(false)
   
-  var myGrid = <p>My placeholder hahahahahaha</p>
+  
     //search bar input
   var [input, setData] = useState("null")
   //api data
-  var [apiName, setName] = useState()
+  var [name, setName] = useState()
   var [imgUri, setImage] = useState()
   var [rating, setRating] = useState()
   var [url, setUrl] = useState()
-  var [apiName2, setName2] = useState()
+  var [name2, setName2] = useState()
   var [imgUri2, setImage2] = useState()
   var [rating2, setRating2] = useState()
   var [url2, setUrl2] = useState()
-  var [apiName3, setName3] = useState()
+  var [name3, setName3] = useState()
   var [imgUri3, setImage3] = useState()
   var [rating3, setRating3] = useState()
   var [url3, setUrl3] = useState()
-  var [apiName4, setName4] = useState()
+  var [name4, setName4] = useState()
   var [imgUri4, setImage4] = useState()
   var [rating4, setRating4] = useState()
   var [url4, setUrl4] = useState()
-  var [apiName5, setName5] = useState()
+  var [name5, setName5] = useState()
   var [imgUri5, setImage5] = useState()
   var [rating5, setRating5] = useState()
   var [url5, setUrl5] = useState()
-  var [apiName6, setName6] = useState()
+  var [name6, setName6] = useState()
   var [imgUri6, setImage6] = useState()
   var [rating6, setRating6] = useState()
   var [url6, setUrl6] = useState()
@@ -102,58 +102,145 @@ const Search = () => {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
       </Head>
-
+      <main>
       <form align="center" onSubmit={submitHandler}>
       <input type="text" placeholder="Type city" className="searchText" onChange={inputChange}/>
-      <button><i className="fa fa-search"></i></button>
+      <button className="searchButton"><i className="fa fa-search"></i></button>
       </form>
       <div>
         <h2 align="center">Results</h2>
-        <div style={{visibility: divStyle ? 'visible' : 'hidden'}} align="center" className="grid">
-              <a href={url} className="card">
-                <h3>{apiName}</h3>
+        <div style={{visibility: divStyle ? 'visible' : 'hidden', align: 'center'}} className="gridMediator">
+              <a href={url} className="cardM">
+                <h3>{name}</h3>
                 <img src={imgUri} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating}</p>
+                <p align="center">Rating: {rating} ⭐</p>
               </a>
     
-              <a href={url2} className="card">
-              <h3>{apiName2}</h3>
+              <a href={url2} className="cardM">
+              <h3>{name2}</h3>
                 <img src={imgUri2} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating2}</p>
+                <p align="center">Rating: {rating2} ⭐</p>
               </a>
     
               <a
                 href={url3}
-                className="card"
+                className="cardM"
               >
-                <h3>{apiName3}</h3>
+                <h3>{name3}</h3>
                 <img src={imgUri3} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating3}</p>
+                <p align="center">Rating: {rating3} ⭐</p>
               </a>
     
               <a
                 href={url4}
-                className="card"
+                className="cardM"
               >
-                <h3>{apiName4}</h3>
+                <h3>{name4}</h3>
                 <img src={imgUri4} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating4}</p>
+                <p align="center">Rating: {rating4} ⭐</p>
               </a>
 
-              <a href={url5} className="card">
-                <h3>{apiName5}</h3>
+              <a href={url5} className="cardM">
+                <h3>{name5}</h3>
                 <img src={imgUri5} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating5}</p>
+                <p align="center">Rating: {rating5} ⭐</p>
               </a>
     
-              <a href={url6} className="card">
-              <h3>{apiName6}</h3>
+              <a href={url6} className="cardM">
+                <h3>{name6}</h3>
                 <img src={imgUri6} alt="Loading..." width="200" height="200"/>
-                <p>Rating: {rating6}</p>
+                <p align="center">Rating: {rating6} ⭐</p>
               </a>
-              <p align="center">Enjoy!</p>
+              <p align="center" id="enjoy">Enjoy!</p>
             </div>
       </div>
+      </main>
+
+      <style jsx>{`
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+
+            .searchText {
+              border-radius: 40px;
+            }
+
+            .searchButton {
+              border-radius: 40px;
+            }
+
+            main {
+              padding: 5rem 0;
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+    
+            .gridMediator {
+              display: flex;
+              align: center;
+              align-items: center;
+              justify-content: center;
+              flex-wrap: wrap;
+              
+              max-width: 1200px;
+              margin-top: 3rem;
+            }
+
+            .gridMediator img{
+              width: 300px;
+              height: 300px;
+            }
+    
+            .cardM {
+              margin: 1rem;
+              flex-basis: 30%;
+              padding: 1.5rem;
+              text-align: left;
+              color: inherit;
+              text-decoration: none;
+              border: 1px solid #eaeaea;
+              border-radius: 10px;
+              transition: color 0.15s ease, border-color 0.15s ease;
+            }
+    
+            .cardM:hover,
+            .cardM:focus,
+            .cardM:active {
+              color: #0070f3;
+              border-color: #0070f3;
+            }
+    
+            .cardM h3 {
+              margin: 0 0 1rem 0;
+              font-size: 1.5rem;
+            }
+    
+            .cardM p {
+              align: center;
+              font-size: 1.25rem;
+              line-height: 1.5;
+            }
+
+            #enjoy {
+              clear: left;
+            }
+    
+            .logo {
+              height: 1em;
+            }
+    
+            @media (max-width: 600px) {
+              .gridMediator {
+                width: 100%;
+                flex-direction: column;
+              }
+            }
+          `}</style>
+    
     </>
   );
 }
