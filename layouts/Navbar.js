@@ -12,27 +12,29 @@ const Navbar = () => {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <Link href="/" class="nav-item">
-            <a className = 'nav-link'>Home</a>
-          </Link>      
-          <Link href="/search/" class="nav-item">
-            <a className = 'nav-link'>Search</a>
-          </Link>
-          <Link href="/cart/" class="nav-item">
-            <a className = 'nav-link'>Cart</a>
-          </Link>
-          <Link href='/addComment' class="nav-item">
-            <a className = 'nav-link'>Add comment</a>
-          </Link>
-          <Link href='/addCoupon' class="nav-item">
-            <a className = 'nav-link'>Add coupon to account</a>
-          </Link>
-          <Link href='/commentBoard' class="nav-item">
-            <a className = 'nav-link'>Comments board</a>
-          </Link>
-          <Link href='/developerCouponList' class="nav-item">
-            <a className = 'nav-link'>Make Order</a>
-          </Link>
+          <div class="navbar-nav">
+            <Link href="/" class="nav-item">
+              <a className = 'nav-link'>Home</a>
+            </Link>      
+            <Link href="/search/" class="nav-item">
+              <a className = 'nav-link'>Search</a>
+            </Link>
+            <Link href="/cart/" class="nav-item">
+              <a className = 'nav-link'>Cart</a>
+            </Link>
+            <Link href='/addComment' class="nav-item">
+              <a className = 'nav-link'>Add comment</a>
+            </Link>
+            <Link href='/addCoupon' class="nav-item">
+              <a className = 'nav-link'>Add coupon to account</a>
+            </Link>
+            <Link href='/commentBoard' class="nav-item">
+              <a className = 'nav-link'>Comments board</a>
+            </Link>
+            <Link href='/developerCouponList' class="nav-item">
+              <a className = 'nav-link'>Make Order</a>
+            </Link>
+          </div>
         </div>
       </nav>
 
