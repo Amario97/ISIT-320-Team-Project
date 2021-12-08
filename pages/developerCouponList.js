@@ -65,61 +65,78 @@ export default function DeveloperCouponList( {coupons} ) {
     return (
         <div className="container">
             <Head>
-                <title>Make rder</title>
+                <title>Make order</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <h1>
-                Make Order
-            </h1>
-
-            <br />
-            <label>Choose a Restaurant:</label>
-            <select>
-                <option>Place 1</option>
-                <option>Place 2</option>
-                <option>Place 3</option>
-                <option>Place 4</option>
-            </select>
-            <br />
-            <label htmlFor="carrotCount">Carrot</label>
-            <input type="number" id="carrotCount" onChange={getCarrot} min="0"/>
-            <br />
-            <label htmlFor="bananaCount">Banana</label>
-            <input type="number" id="bananaCount" onChange={getBanana} min="0"/>
-            <br />
-            <label htmlFor="cucumberCount">Cucumber</label>
-            <input type="number" id="cucumberCount"  onChange={getCucumber} min="0"/>
-            <br />
-            <button onClick = {() => { calculateSubtotal(carrot, banana, cucumber)}}>Calculate Subtotal</button>
-            <br />
-            <br />
-            {
-            print?
-                <h1>Coupon Activated</h1>
-                :
-                <div>
-                    <label htmlFor="couponBox">Coupon</label>
-                    <input type="text" id="couponBox" onChange={getData} />
-                    <button onClick = {() => {checkCoupon(data);} }>Add Coupon</button>
-                    {
-                        invalidCoupon?
-                        <div>Invalid Coupon Found</div>:
-                        null
-                    }
-                    <br />
-                    <br />
-                    <br />
+            <div className="container">
+                <div className="row">
+                    <h1>
+                        Make Order
+                    </h1>
                 </div>
-            }
-            <div>
-                Total Price: {price}
+                <div className="row">
+                    <label>Choose a Restaurant:</label>
+                    <select>
+                        <option>Place 1</option>
+                        <option>Place 2</option>
+                        <option>Place 3</option>
+                        <option>Place 4</option>
+                    </select>
+                </div>
+                <br />
+                <div className="row">
+                    <div className="col-sm-4">
+                        <label htmlFor="carrotCount">Carrot</label>
+                        <input type="number" id="carrotCount" onChange={getCarrot} min="0"/>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="bananaCount">Banana</label>
+                        <input type="number" id="bananaCount" onChange={getBanana} min="0"/>
+                    </div>
+                    <div className="col-sm-4">
+                        <label htmlFor="cucumberCount">Cucumber</label>
+                        <input type="number" id="cucumberCount"  onChange={getCucumber} min="0"/>
+                    </div>
+                </div>
+                <br />
+
+                <div className="row">
+                    <button onClick = {() => { calculateSubtotal(carrot, banana, cucumber)}}>Calculate Subtotal</button>
+                </div>
+                <br />
+                <div className="row">
+                    {
+                        print?
+                        <h1>Coupon Activated</h1>
+                        :
+                        <div>
+                            <label htmlFor="couponBox">Coupon</label>
+                            <input type="text" id="couponBox" onChange={getData} />
+                            <button onClick = {() => {checkCoupon(data);} }>Add Coupon</button>
+                            {
+                                invalidCoupon?
+                                <div>Invalid Coupon Found</div>:
+                                null
+                            }
+                        </div>
+                    }
+                </div>
+                <br />
+                <div className="row">
+                    <div>
+                        Total Price: {price}
+                    </div>
+                </div>
+                <br />
+                <div className="row">
+                    {
+                    price > 0?
+                    <button onClick={() => {router.push('/orderAdded')}}>Submit</button>
+                    :null
+                    }
+                </div>
             </div>
-            {
-                price > 0?
-                <button onClick={() => {router.push('/orderAdded')}}>Submit</button>
-                :null
-            }
         </div>
     )
 }

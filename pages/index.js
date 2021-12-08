@@ -17,8 +17,8 @@ export default function Home() {
         <title>Meal Mediator | Home</title>
         <meta name="keywords" content="mediator"/>
       </Head>
-
-      <h1>Welcome to Meal Mediator</h1>
+<div class="container">
+<h1>Welcome to Meal Mediator</h1>
       <div>MealMediator gives users the ability to look up restaurants and choose where they would like to go. It will also allow users to choose multiple restaurants and have the app randomly choose one for them.</div>
       <br></br>
       <h2>Popular Dining Choices</h2>
@@ -37,6 +37,8 @@ export default function Home() {
           <span class="caption">Indian Food</span>
         </div>
       </div>
+</div>
+
 
 
     </>
