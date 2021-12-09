@@ -24,12 +24,18 @@ export async function fetcher(city) {
 }
 
 const Search = () => {
+  //A boolean for switching visibility of our api results
   var [divStyle, setDivStyle] = useState(false)
+  //MealMediator special choice
+  var [specialName, setSpecialName] = useState()
+  var [specialImage, setSpecialImage] = useState()
+  var [specialRating, setSpecialRating] = useState()
+  var [specialUrl, setSpecialUrl] = useState()
   
   
-    //search bar input
+  //Search bar input
   var [input, setData] = useState("null")
-  //api data
+  //Setting the api data
   var [name, setName] = useState()
   var [imgUri, setImage] = useState()
   var [rating, setRating] = useState()
@@ -55,11 +61,13 @@ const Search = () => {
   var [rating6, setRating6] = useState()
   var [url6, setUrl6] = useState()
 
+  //Gets called every time there is a change when we type in the search bar, saves each character.
   function inputChange(val) {
     setData(val.target.value)
     totalInput = input;
   }
 
+  //Method responding to the search button, gets the api data
   async function submitHandler(event) {
     event.preventDefault();
     totalInput = input;
@@ -90,6 +98,56 @@ const Search = () => {
       setImage6(data.businesses[5].image_url)
       setRating6(data.businesses[5].rating)
       setUrl6(data.businesses[5].url)
+
+      //Setting special MealMediator Choice
+      var randomNum = Math.floor( Math.random() * (6))
+      console.log("Random num: " + randomNum)
+      switch (randomNum) {
+        case 0:
+          setSpecialName(data.businesses[0].name);
+          setSpecialImage(data.businesses[0].image_url);
+          setSpecialRating(data.businesses[0].rating);
+          setSpecialUrl(data.businesses[0].url);
+          console.log("entered case: " + 0)
+          break;
+        case 1:
+          setSpecialName(data.businesses[1].name);
+          setSpecialImage(data.businesses[1].image_url);
+          setSpecialRating(data.businesses[1].rating);
+          setSpecialUrl(data.businesses[1].url);
+          console.log("entered case: " + 1)
+          break;
+        case 2:
+          setSpecialName(data.businesses[2].name);
+          setSpecialImage(data.businesses[2].image_url);
+          setSpecialRating(data.businesses[2].rating);
+          setSpecialUrl(data.businesses[2].url);
+          console.log("entered case: " + 2)
+          break;
+        case 3:
+          setSpecialName(data.businesses[3].name);
+          setSpecialImage(data.businesses[3].image_url);
+          setSpecialRating(data.businesses[3].rating);
+          setSpecialUrl(data.businesses[3].url);
+          console.log("entered case: " + 3)
+          break;
+        case 4:
+          setSpecialName(data.businesses[4].name);
+          setSpecialImage(data.businesses[4].image_url);
+          setSpecialRating(data.businesses[4].rating);
+          setSpecialUrl(data.businesses[4].url);
+          console.log("entered case: " + 4)
+          break;
+        case 5:
+          setSpecialName(data.businesses[5].name);
+          setSpecialImage(data.businesses[5].image_url);
+          setSpecialRating(data.businesses[5].rating);
+          setSpecialUrl(data.businesses[5].url);
+          console.log("entered case: " + 5)
+          break;
+        default:
+          console.log(`Nothin to choose`);
+      }
       setDivStyle(true)
     })
   }
@@ -110,6 +168,18 @@ const Search = () => {
       </form>
       <div>
         <h2 align="center">Results</h2>
+
+        <div style={{visibility: divStyle ? 'visible' : 'hidden', align: 'center'}}>
+        <div className="gridMediator">
+              <a href={specialUrl} className="cardM">
+                <h3>{specialName}</h3>
+                <img src={specialImage} alt="Loading..." width="200" height="200"/>
+                <p align="center">Rating: {specialRating} ⭐</p>
+                <p align="center">🍽🌮 MealMediator's Pick! 🍱🍽</p>
+              </a>
+        </div>
+        </div>
+
         <div style={{visibility: divStyle ? 'visible' : 'hidden', align: 'center'}} className="gridMediator">
               <a href={url} className="cardM">
                 <h3>{name}</h3>
@@ -207,9 +277,7 @@ const Search = () => {
               align-items: center;
               justify-content: center;
               flex-wrap: wrap;
-              
               max-width: 1200px;
-              margin-top: 3rem;
             }
 
             .gridMediator img{
