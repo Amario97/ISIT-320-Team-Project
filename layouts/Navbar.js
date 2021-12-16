@@ -34,6 +34,9 @@ const Navbar = () => {
             <Link href='/developerCouponList' class="nav-item">
               <a className = 'nav-link'>Make Order</a>
             </Link>
+            <Link href='/couponList' class="nav-item">
+              <a className = 'nav-link'>Coupon List</a>
+            </Link>
           </div>
         </div>
       </nav>
